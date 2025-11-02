@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Performance Report - FleetRisk AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="report-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">FleetRisk<span class="ai">AI</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="driver-report.html" class="active">Sample Report</a></li>
+                <li><a href="index.html#contact" class="cta-button">Request Demo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Report Header -->
+    <section class="report-header">
+        <div class="container">
+            <div class="report-title-section">
+                <h1>Driver Performance Report</h1>
+                <p class="report-period">Reporting Period: 1 Oct 2025 - 31 Oct 2025</p>
+            </div>
+            <div class="driver-info-card">
+                <div class="driver-photo">
+                    <div class="photo-placeholder">JD</div>
+                </div>
+                <div class="driver-details">
+                    <h2>John Davies</h2>
+                    <p class="driver-id">Driver ID: FLT-2847</p>
+                    <p class="vehicle">Vehicle: Van #142 (Ford Transit)</p>
+                    <div class="driver-stats-quick">
+                        <span class="stat-badge">1,247 miles driven</span>
+                        <span class="stat-badge">89 trips</span>
+                        <span class="stat-badge">28 days active</span>
+                    </div>
+                </div>
+                <div class="risk-score-badge">
+                    <div class="score-circle moderate">
+                        <span class="score-value">54</span>
+                        <span class="score-label">Risk Score</span>
+                    </div>
+                    <p class="risk-level">Medium Risk</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Driver Archetype -->
+    <section class="archetype-section">
+        <div class="container">
+            <h2 class="section-title">Driver Behavior DNA Profile</h2>
+            <div class="archetype-card">
+                <div class="archetype-header">
+                    <div class="archetype-icon">🏙️</div>
+                    <div class="archetype-info">
+                        <h3>Urban Commuter - Cautious Type</h3>
+                        <p class="archetype-confidence">90% confidence match</p>
+                    </div>
+                </div>
+                <div class="archetype-description">
+                    <p><strong>Primary Characteristics:</strong> Excels in urban environments with complex traffic. Shows cautious behavior during peak hours. Performance decreases significantly in adverse weather conditions and at night.</p>
+                    <div class="archetype-traits">
+                        <span class="trait-tag positive">✓ Urban navigation expert</span>
+                        <span class="trait-tag positive">✓ Good anticipation skills</span>
+                        <span class="trait-tag positive">✓ Respects speed limits</span>
+                        <span class="trait-tag warning">⚠ Night driving caution needed</span>
+                        <span class="trait-tag warning">⚠ Weather sensitivity high</span>
+                    </div>
+                </div>
+                <div class="archetype-comparison">
+                    <h4>Similar Drivers in Fleet</h4>
+                    <p>23 drivers share this archetype (15% of fleet) with average risk score of 48 vs. John's 54</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spider Graph Performance -->
+    <section class="spider-section">
+        <div class="container">
+            <h2 class="section-title">Multi-Dimensional Performance Analysis</h2>
+            <div class="spider-container">
+                <div class="spider-chart-wrapper">
+                    <canvas id="spiderChart"></canvas>
+                </div>
+                <div class="spider-legend">
+                    <h3>Performance Dimensions</h3>
+                    <div class="dimension-list">
+                        <div class="dimension-item excellent">
+                            <span class="dimension-dot"></span>
+                            <span class="dimension-name">Speed Management</span>
+                            <span class="dimension-score">92/100</span>
+                        </div>
+                        <div class="dimension-item good">
+                            <span class="dimension-dot"></span>
+                            <span class="dimension-name">Urban Driving</span>
+                            <span class="dimension-score">85/100</span>
+                        </div>
+                        <div class="dimension-item good">
+                            <span class="dimension-dot"></span>
+                            <span class="dimension-name">Traffic Navigation</span>
+                            <span class="dimension-score">78/100</span>
+                        </div>
+                        <div class="dimension-item moderate">
+                            <span class="dimension-dot"></span>
+                            <span class="dimension-name">Weather Adaptation</span>
+                            <span class="dimension-score">52/100</span>
+                        </div>
+                        <div class="dimension-item poor">
+                            <span class="dimension-dot"></span>
+                            <span class="dimension-name">Night Driving</span>
+                            <span class="dimension-score">41/100</span>
+                        </div>
+                        <div class="dimension-item moderate">
+                            <span class="dimension-dot"></span>
+                            <span class="dimension-name">Highway Performance</span>
+                            <span class="dimension-score">68/100</span>
+                        </div>
+                        <div class="dimension-item good">
+                            <span class="dimension-dot"></span>
+                            <span class="dimension-name">Smooth Acceleration</span>
+                            <span class="dimension-score">81/100</span>
+                        </div>
+                        <div class="dimension-item moderate">
+                            <span class="dimension-dot"></span>
+                            <span class="dimension-name">Braking Control</span>
+                            <span class="dimension-score">65/100</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Events -->
+    <section class="events-section">
+        <div class="container">
+            <h2 class="section-title">Notable Driving Events</h2>
+            <div class="events-summary">
+                <div class="event-stat">
+                    <span class="event-number high">12</span>
+                    <span class="event-label">High Risk Events</span>
+                </div>
+                <div class="event-stat">
+                    <span class="event-number medium">34</span>
+                    <span class="event-label">Medium Risk Events</span>
+                </div>
+                <div class="event-stat">
+                    <span class="event-number low">127</span>
+                    <span class="event-label">Low Risk Events</span>
+                </div>
+            </div>
+
+            <div class="events-timeline">
+                <h3>High Priority Events Requiring Attention</h3>
+                
+                <div class="event-card high-risk">
+                    <div class="event-header">
+                        <span class="event-badge critical">High Risk</span>
+                        <span class="event-date">28 Oct 2025, 19:45</span>
+                    </div>
+                    <div class="event-details">
+                        <h4>Harsh Braking in Wet Conditions</h4>
+                        <p class="event-location">📍 A406 North Circular, London (Urban)</p>
+                        <div class="event-metrics">
+                            <div class="metric">
+                                <span class="metric-label">Speed</span>
+                                <span class="metric-value">42 mph</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Deceleration</span>
+                                <span class="metric-value">-8.2 m/s²</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Weather</span>
+                                <span class="metric-value">Heavy Rain</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Visibility</span>
+                                <span class="metric-value">2.1 km</span>
+                            </div>
+                        </div>
+                        <div class="event-context">
+                            <p><strong>Risk Factors:</strong> Night driving (low visibility) + Heavy rain + Harsh braking = 4.2x normal risk</p>
+                            <p><strong>Recommendation:</strong> Review emergency braking techniques in wet conditions. Consider defensive driving course module on weather adaptation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card high-risk">
+                    <div class="event-header">
+                        <span class="event-badge critical">High Risk</span>
+                        <span class="event-date">23 Oct 2025, 20:15</span>
+                    </div>
+                    <div class="event-details">
+                        <h4>Speed Warning at Junction</h4>
+                        <p class="event-location">📍 Roundabout, M25 Junction 15 (Highway)</p>
+                        <div class="event-metrics">
+                            <div class="metric">
+                                <span class="metric-label">Speed</span>
+                                <span class="metric-value">58 mph</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Speed Limit</span>
+                                <span class="metric-value">40 mph</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Junction Type</span>
+                                <span class="metric-value">Roundabout</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Time</span>
+                                <span class="metric-value">Night</span>
+                            </div>
+                        </div>
+                        <div class="event-context">
+                            <p><strong>Risk Factors:</strong> Speeding at junction + Roundabout + Night = 3.8x normal risk</p>
+                            <p><strong>Recommendation:</strong> Junction approach training needed. Focus on speed reduction before complex intersections.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card medium-risk">
+                    <div class="event-header">
+                        <span class="event-badge warning">Medium Risk</span>
+                        <span class="event-date">19 Oct 2025, 08:30</span>
+                    </div>
+                    <div class="event-details">
+                        <h4>Rapid Acceleration in Traffic</h4>
+                        <p class="event-location">📍 High Street, Camden (Residential)</p>
+                        <div class="event-metrics">
+                            <div class="metric">
+                                <span class="metric-label">Acceleration</span>
+                                <span class="metric-value">4.1 m/s²</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Traffic</span>
+                                <span class="metric-value">High Density</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Area Type</span>
+                                <span class="metric-value">Residential</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Time</span>
+                                <span class="metric-value">Rush Hour</span>
+                            </div>
+                        </div>
+                        <div class="event-context">
+                            <p><strong>Risk Factors:</strong> High traffic + Residential area + Rush hour = 2.1x normal risk</p>
+                            <p><strong>Recommendation:</strong> Practice smooth acceleration in congested areas. Review fuel efficiency techniques.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommendations -->
+    <section class="recommendations-section">
+        <div class="container">
+            <h2 class="section-title">Personalized Training Recommendations</h2>
+            <div class="recommendations-grid">
+                <div class="recommendation-card priority-high">
+                    <div class="recommendation-header">
+                        <span class="priority-badge">High Priority</span>
+                        <span class="impact-score">Impact: -12 risk points</span>
+                    </div>
+                    <h3>Night Driving & Low Visibility Training</h3>
+                    <p>Your night driving performance is 32% below fleet average. Focus on hazard perception and speed adjustment in low light conditions.</p>
+                    <div class="recommendation-modules">
+                        <span class="module">🎓 Module 1: Night Hazard Recognition</span>
+                        <span class="module">🎓 Module 2: Headlight & Vision Management</span>
+                        <span class="module">🎓 Module 3: Speed Adjustment for Visibility</span>
+                    </div>
+                    <button class="btn btn-primary">Start Training</button>
+                </div>
+
+                <div class="recommendation-card priority-medium">
+                    <div class="recommendation-header">
+                        <span class="priority-badge medium">Medium Priority</span>
+                        <span class="impact-score">Impact: -8 risk points</span>
+                    </div>
+                    <h3>Adverse Weather Driving</h3>
+                    <p>Weather sensitivity detected. Training on wet/icy conditions will improve confidence and reduce harsh braking incidents by 40%.</p>
+                    <div class="recommendation-modules">
+                        <span class="module">🎓 Module 1: Wet Road Braking</span>
+                        <span class="module">🎓 Module 2: Hydroplaning Prevention</span>
+                    </div>
+                    <button class="btn btn-secondary">Start Training</button>
+                </div>
+
+                <div class="recommendation-card priority-medium">
+                    <div class="recommendation-header">
+                        <span class="priority-badge medium">Medium Priority</span>
+                        <span class="impact-score">Impact: -6 risk points</span>
+                    </div>
+                    <h3>Junction & Roundabout Safety</h3>
+                    <p>Speed management at junctions needs improvement. 3 high-risk events at roundabouts this month.</p>
+                    <div class="recommendation-modules">
+                        <span class="module">🎓 Module 1: Junction Approach Speed</span>
+                        <span class="module">🎓 Module 2: Roundabout Navigation</span>
+                    </div>
+                    <button class="btn btn-secondary">Start Training</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trend Analysis -->
+    <section class="trends-section">
+        <div class="container">
+            <h2 class="section-title">Performance Trends</h2>
+            <div class="trends-grid">
+                <div class="trend-card improving">
+                    <h3>Speed Management ↗</h3>
+                    <p class="trend-change">+8% improvement vs last month</p>
+                    <div class="mini-chart">
+                        <canvas id="speedTrend"></canvas>
+                    </div>
+                </div>
+                <div class="trend-card declining">
+                    <h3>Night Performance ↘</h3>
+                    <p class="trend-change">-12% decline vs last month</p>
+                    <div class="mini-chart">
+                        <canvas id="nightTrend"></canvas>
+                    </div>
+                </div>
+                <div class="trend-card stable">
+                    <h3>Overall Risk Score →</h3>
+                    <p class="trend-change">54 (stable, +2 pts)</p>
+                    <div class="mini-chart">
+                        <canvas id="riskTrend"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Predicted Risk -->
+    <section class="prediction-section">
+        <div class="container">
+            <h2 class="section-title">Incident Risk Forecast</h2>
+            <div class="prediction-card">
+                <div class="prediction-header">
+                    <h3>Next 90 Days</h3>
+                    <span class="confidence-badge">85% confidence</span>
+                </div>
+                <div class="prediction-content">
+                    <div class="prediction-probability">
+                        <span class="probability-value">1.8%</span>
+                        <span class="probability-label">Incident Probability</span>
+                    </div>
+                    <div class="prediction-factors">
+                        <h4>Key Contributing Factors:</h4>
+                        <ul>
+                            <li>Night driving exposure (35% of trips)</li>
+                            <li>Weather sensitivity (recent rain events)</li>
+                            <li>Junction speed management</li>
+                        </ul>
+                    </div>
+                    <div class="prediction-action">
+                        <p><strong>Recommended Actions:</strong> Complete night driving training within 2 weeks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>FleetRisk<span class="ai">AI</span></h4>
+                    <p>Intelligent fleet safety powered by AI</p>
+                </div>
+                <div class="footer-section">
+                    <p><a href="index.html">← Back to Home</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FleetRisk AI. Sample Report.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="report-script.js"></script>
+</body>
+</html>
