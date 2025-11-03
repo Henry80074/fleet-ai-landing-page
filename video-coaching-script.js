@@ -10,7 +10,7 @@ function calculateROI() {
     const compAnnual = vehicles * 400;
     const compTotal = compHardware + (compAnnual * years);
     
-    // FleetRisk AI costs
+    // DriveWise AI costs
     const frHardware = vehicles * 100;
     const frAnnual = vehicles * 150;
     const frTotal = frHardware + (frAnnual * years);

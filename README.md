@@ -1,6 +1,6 @@
-# FleetRisk AI - Marketing Website
+# DriveWise AI - Marketing Website
 
-This directory contains the marketing website for FleetRisk AI, showcasing our intelligent fleet safety and risk management platform.
+This directory contains the marketing website for DriveWise AI, showcasing our intelligent fleet safety and risk management platform.
 
 ## Features Highlighted
 
