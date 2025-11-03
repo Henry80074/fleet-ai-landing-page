@@ -6,7 +6,7 @@ This directory contains the marketing website for DriveWise AI, showcasing our i
 
 ### Proprietary IP & Technology
 - **Driver Behavior DNA** - Behavioral fingerprinting across 12+ dimensions
-- **Contextual Risk Intelligence™** - Real-time adaptive risk scoring
+- **Contextual Risk Intelligence** - Real-time adaptive risk scoring
 - **Predictive Incident Forecasting** - 30/60/90-day predictions with 85%+ accuracy
 - **Personalized Coaching Engine** - AI-generated driver-specific training
 - **Performance Spider Graphs** - Multi-dimensional visual reports
