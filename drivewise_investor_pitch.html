@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveWise AI - Investor Pitch Deck</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #0ea5e9;
+            --accent-color: #f59e0b;
+            --dark-bg: #0f172a;
+            --light-bg: #f8fafc;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: white;
+        }
+        
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 25mm;
+            margin: 0 auto;
+            background: white;
+            page-break-after: always;
+            position: relative;
+        }
+        
+        .cover {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: var(--gradient);
+            color: white;
+        }
+        
+        .logo {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .logo .ai {
+            color: var(--accent-color);
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+        
+        .cover-subtitle {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-top: 40px;
+            padding: 15px 30px;
+            border: 2px solid white;
+            border-radius: 10px;
+        }
+
+        .stat-boxes {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin-top: 40px;
+            width: 100%;
+            max-width: 700px;
+        }
+
+        .stat-box {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            color: var(--text-dark);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        h3 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: var(--text-dark);
+            text-align: justify;
+        }
+        
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+        
+        .highlight-box {
+            background: var(--light-bg);
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .success-box {
+            background: #ecfdf5;
+            border-left: 4px solid var(--success);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .warning-box {
+            background: #fffbeb;
+            border-left: 4px solid var(--warning);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+            box-shadow: var(--shadow);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        th {
+            background: var(--gradient);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 13px;
+        }
+        
+        tr:nth-child(even) {
+            background: var(--light-bg);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .footer {
+            position: absolute;
+            bottom: 20mm;
+            left: 25mm;
+            right: 25mm;
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-light);
+            padding-top: 10px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .market-stat {
+            background: var(--gradient);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 20px 0;
+            box-shadow: 0 20px 60px rgba(37, 99, 235, 0.3);
+        }
+
+        .market-stat h2 {
+            color: white;
+            margin: 0 0 10px 0;
+            font-size: 3rem;
+        }
+
+        .market-stat p {
+            margin: 0;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .competitive-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .competitor-card {
+            background: var(--light-bg);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 3px solid var(--secondary-color);
+        }
+
+        .competitor-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .competitor-card p {
+            font-size: 0.85rem;
+            margin: 0;
+            text-align: left;
+        }
+
+        .advantage-list {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .advantage-list li:before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .metric-card {
+            background: var(--light-bg);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .metric-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: block;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+
+        .metric-sublabel {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .page {
+                margin: 0;
+                page-break-after: always;
+            }
+            .button-container {
+                display: none;
+            }
+        }
+        
+        .button-container {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: var(--light-bg);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .download-btn {
+            background: var(--gradient);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+            transition: all 0.3s;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.4);
+        }
+
+        .icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 20px;
+            border-left: 2px solid var(--secondary-color);
+            padding-left: 25px;
+            margin-left: 10px;
+        }
+
+        .timeline-item:before {
+            content: "";
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--secondary-color);
+        }
+
+        .timeline-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .timeline-item p {
+            margin: 0;
+            font-size: 0.9rem;
+            text-align: left;
+        }
+
+        .revenue-box {
+            background: #ecfdf5;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border: 2px solid var(--success);
+        }
+
+        .revenue-calc {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 15px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+        }
+
+        .revenue-calc-label {
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+
+        .revenue-calc-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--success);
+        }
+    </style>
+</head>
+<body>
+    <!-- Cover Page -->
+    <div class="page cover">
+        <div class="logo">DriveWise<span class="ai">AI</span></div>
+        <div class="tagline">Contextual Risk Intelligence for Safer Fleets</div>
+        <div class="stat-boxes">
+            <div class="stat-box">
+                <span class="stat-value">£68B</span>
+                <span class="stat-label">Telematics TAM 2030</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-value">12.1%</span>
+                <span class="stat-label">Market CAGR</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-value">£2</span>
+                <span class="stat-label">Per Vehicle/Month</span>
+            </div>
+        </div>
+        <div class="cover-subtitle">Investor Presentation | November 2025</div>
+    </div>
+
+    <!-- The Opportunity -->
+    <div class="page">
+        <h1>The Opportunity</h1>
+        
+        <div class="market-stat">
+            <h2>£68 Billion</h2>
+            <p>Global Telematics Market by 2030 (12.1% CAGR)</p>
+        </div>
+
+        <h2>A Massive, Growing Market</h2>
+        <p>The global fleet telematics and risk intelligence market is experiencing explosive growth, driven by regulatory mandates, insurance innovation, and operational efficiency demands.</p>
+
+        <div class="metric-grid">
+            <div class="metric-card">
+                <span class="metric-number">£30B</span>
+                <span class="metric-label">Fleet Telematics</span>
+                <span class="metric-sublabel">9.8% CAGR to 2034</span>
+            </div>
+            <div class="metric-card">
+                <span class="metric-number">£12B</span>
+                <span class="metric-label">Insurance Telematics</span>
+                <span class="metric-sublabel">18.5% CAGR to 2033</span>
+            </div>
+            <div class="metric-card">
+                <span class="metric-number">£26B</span>
+                <span class="metric-label">Commercial Vehicle</span>
+                <span class="metric-sublabel">12.1% CAGR to 2034</span>
+            </div>
+        </div>
+
+        <h2>Key Market Drivers</h2>
+        <ul class="advantage-list">
+            <li><strong>Regulatory Mandates:</strong> ELD requirements (US), eCall systems (EU), AIS-140 (India) driving adoption</li>
+            <li><strong>Insurance Innovation:</strong> Usage-based insurance (UBI) growing at 18.5% CAGR, demanding better risk data</li>
+            <li><strong>Cost Pressure:</strong> Fuel costs, insurance premiums, and accident costs forcing fleets to optimize</li>
+            <li><strong>Technology Maturation:</strong> IoT, 5G, AI/ML enabling sophisticated real-time analytics</li>
+            <li><strong>ESG & Compliance:</strong> Duty of care obligations and carbon reduction goals</li>
+        </ul>
+
+        <div class="highlight-box">
+            <strong style="color: var(--primary-color); font-size: 1.1rem;">The Gap:</strong>
+            <p style="margin-top: 10px;">Despite £68B in telematics spending, existing solutions are <strong>data-rich but insight-poor</strong>. They track events but lack contextual understanding, limiting predictive capability and coaching effectiveness.</p>
+        </div>
+
+        <div class="footer">DriveWise AI | Investor Presentation</div>
+    </div>
+
+    <!-- The Problem -->
+    <div class="page">
+        <h1>The Problem</h1>
+        <p>The £68 billion telematics market has a critical intelligence gap. Current solutions collect massive amounts of data but fail to deliver the contextual insights needed to prevent accidents and reduce costs.</p>
+
+        <h2>What's Wrong With Existing Solutions?</h2>
+        
+        <h3>1. Generic Risk Scoring</h3>
+        <p>Traditional telematics treats all "harsh braking" events equally, whether they occur on a dry motorway or a wet rural road at night. This one-size-fits-all approach creates false positives, frustrates drivers, and fails to identify true risk.</p>
+
+        <h3>2. No Predictive Capability</h3>
+        <p>Most solutions are reactive or near real-time at best. They tell you what happened but can't forecast which drivers are at highest risk of having incidents in the next 30/60/90 days.</p>
+
+        <h3>3. Missing Behavioral Intelligence</h3>
+        <p>Existing systems lack sophisticated driver profiling. They don't understand driver archetypes, adaptation patterns, or situational performance variations that are critical to targeted coaching.</p>
+
+        <h3>4. Context Blindness</h3>
+        <p>Weather conditions, road types, traffic density, time of day, and lighting are ignored. This eliminates the ability to understand <em>why</em> events occurred and whether they represent true risk.</p>
+
+        <h2>The Business Impact</h2>
+        <div class="warning-box">
+            <ul>
+                <li><strong>Ineffective Coaching:</strong> Fleet managers struggle to convert data into behavior change</li>
+                <li><strong>Rising Costs:</strong> Insurance premiums increase despite telematics investment</li>
+                <li><strong>Driver Turnover:</strong> Unfair scoring drives driver dissatisfaction and churn</li>
+                <li><strong>Liability Risk:</strong> Inability to demonstrate proactive duty of care</li>
+                <li><strong>Missed Savings:</strong> Can't target interventions at highest-risk drivers</li>
+            </ul>
+        </div>
+
+        <div class="footer">DriveWise AI | Investor Presentation</div>
+    </div>
+
+    <!-- Our Solution -->
+    <div class="page">
+        <h1>Our Solution: Contextual Risk Intelligence</h1>
+        <p>DriveWise AI transforms raw telematics data into predictive, actionable safety intelligence through our proprietary 3-layer architecture.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Intelligence Layer</th>
+                    <th>Technology</th>
+                    <th>Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1. Data Fusion Engine</strong></td>
+                    <td>Integrates telematics + GPS with external datasets (weather, road type, traffic, crash history, lighting)</td>
+                    <td>Contextually enriched event database</td>
+                </tr>
+                <tr>
+                    <td><strong>2. Contextual Risk Engine</strong></td>
+                    <td>ML-powered multiplicative risk models with probabilistic forecasting</td>
+                    <td>Real-time risk scores + 30/60/90-day incident predictions</td>
+                </tr>
+                <tr>
+                    <td><strong>3. Behavioral DNA Profiling</strong></td>
+                    <td>12+ dimensional behavioral fingerprinting with archetype identification</td>
+                    <td>Personalized coaching plans + intervention prioritization</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Core Differentiators</h2>
+        <ul class="advantage-list">
+            <li><strong>Multiplicative Risk Modeling:</strong> Understanding that rain + night + aggressive driving = 5x risk, not 3 separate events</li>
+            <li><strong>Predictive Forecasting:</strong> ML models that forecast incident probability over 30/60/90 days with confidence intervals</li>
+            <li><strong>Driver Behavior DNA:</strong> Comprehensive profiling across urban/highway, day/night, weather, traffic, time patterns</li>
+            <li><strong>Software-First:</strong> Works with any telematics provider via API - no hardware lock-in</li>
+            <li><strong>Explainable AI:</strong> Every risk score includes contextual explanation for driver understanding</li>
+            <li><strong>Insurance Integration:</strong> Data format designed for UBI pricing and premium justification</li>
+        </ul>
+
+        <div class="success-box">
+            <strong style="color: var(--success); font-size: 1.1rem;">Key Innovation:</strong>
+            <p style="margin-top: 10px;">We don't just tell fleets <em>what</em> happened - we explain <em>why</em> it happened, <em>who</em> is at risk, and <em>what</em> to do about it.</p>
+        </div>
+
+        <div class="footer">DriveWise AI | Investor Presentation</div>
+    </div>
+
+    <!-- Competitive Landscape -->
+    <div class="page">
+        <h1>Competitive Landscape</h1>
+        <p>We've analyzed 9 major players in the fleet risk intelligence space. None offer the combination of predictive, multiplicative, and behavioral DNA capabilities.</p>
+
+        <table style="font-size: 12px;">
+            <thead>
+                <tr>
+                    <th>Company</th>
+                    <th>Strength</th>
+                    <th>Gap / DriveWise Advantage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Geotab</strong></td>
+                    <td>Large installed base, strong analytics platform</td>
+                    <td>Additive risk models, no 30/60/90-day forecasting, limited behavioral profiling</td>
+                </tr>
+                <tr>
+                    <td><strong>Lytx</strong></td>
+                    <td>Video AI, hidden risk detection, strong coaching</td>
+                    <td>Video-focused, lacks integrated predictive ML across modalities, hardware dependent</td>
+                </tr>
+                <tr>
+                    <td><strong>Netradyne</strong></td>
+                    <td>Real-time behavior detection, automated coaching</td>
+                    <td>Camera hardware required, no long-term incident probability forecasting</td>
+                </tr>
+                <tr>
+                    <td><strong>Motive (KeepTruckin)</strong></td>
+                    <td>Integrated telematics + dashcam + scoring</td>
+                    <td>Reactive/near real-time only, limited longitudinal risk modeling and driver archetypes</td>
+                </tr>
+                <tr>
+                    <td><strong>Greater Than</strong></td>
+                    <td>Probabilistic crash modeling, AI coach</td>
+                    <td>We add Driver DNA profiling, root cause analysis, enhanced forecasting granularity</td>
+                </tr>
+                <tr>
+                    <td><strong>Samsara</strong></td>
+                    <td>Comprehensive fleet platform, AI safety tools</td>
+                    <td>Broad platform but lacks specialized contextual risk intelligence and predictive depth</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Our Competitive Advantages</h2>
+        <div class="competitive-grid">
+            <div class="competitor-card">
+                <h4>No Hardware Dependency</h4>
+                <p>Software-only solution integrates with existing telematics infrastructure via API</p>
+            </div>
+            <div class="competitor-card">
+                <h4>True Predictive Intelligence</h4>
+                <p>30/60/90-day incident forecasting with confidence intervals and probability scores</p>
+            </div>
+            <div class="competitor-card">
+                <h4>Behavioral DNA Technology</h4>
+                <p>Proprietary 12+ dimensional driver fingerprinting unavailable elsewhere</p>
+            </div>
+            <div class="competitor-card">
+                <h4>Multiplicative Risk Engine</h4>
+                <p>Only solution modeling factor interactions (e.g., rain × night × speed = 5x risk)</p>
+            </div>
+        </div>
+
+        <div class="footer">DriveWise AI | Investor Presentation</div>
+    </div>
+
+    <!-- Business Model -->
+    <div class="page">
+        <h1>Business Model & Go-to-Market</h1>
+        
+        <h2>Revenue Model</h2>
+        <div class="revenue-box">
+            <h3 style="color: var(--success); margin-top: 0;">Simple SaaS Pricing</h3>
+            <div class="revenue-calc">
+                <span class="revenue-calc-label">Per Vehicle, Per Month</span>
+                <span class="revenue-calc-value">£2.00</span>
+            </div>
+            <p style="margin: 15px 0; text-align: left;"><strong>Volume Discounts:</strong> Enterprises with 1,000+ vehicles receive tiered pricing. White-label options available for strategic partners.</p>
+        </div>
+
+        <h2>Go-to-Market Strategy</h2>
+        
+        <h3>Phase 1: Telematics Partner Channel (Year 1)</h3>
+        <p>Partner with established telematics providers as an intelligence layer. They distribute to their existing customer base, we enhance their platform differentiation.</p>
+        <ul>
+            <li><strong>Target:</strong> 1-2 telematics partnerships representing 100K+ vehicles</li>
+            <li><strong>Split:</strong> 50/50 revenue share or wholesale pricing model</li>
+            <li><strong>Advantage:</strong> Instant market access, no sales team required initially</li>
+        </ul>
+
+        <h3>Phase 2: Insurance Direct (Year 2)</h3>
+        <p>Direct partnerships with commercial insurers offering UBI programs. Provide risk data that justifies premium reductions for safe fleets.</p>
+        <ul>
+            <li><strong>Target:</strong> 3-5 major fleet insurers in UK/EU/US markets</li>
+            <li><strong>Model:</strong> Per-policy licensing or revenue share on premium reductions</li>
+            <li><strong>Value:</strong> Insurers get actuarially-sound risk data for UBI pricing</li>
+        </ul>
+
+        <h3>Phase 3: Enterprise Direct (Year 3+)</h3>
+        <p>Direct sales to large fleet operators (logistics, delivery, construction, utilities) who want best-in-class safety management.</p>
+
+        <div class="footer">DriveWise AI | Investor Presentation</div>
+    </div>
+
+    <!-- Market Sizing -->
+    <div class="page">
+        <h1>Market Opportunity & Revenue Projections</h1>
+
+        <h2>Total Addressable Market (TAM)</h2>
+        <div class="metric-grid">
+            <div class="metric-card">
+                <span class="metric-number">50M+</span>
+                <span class="metric-label">Commercial Vehicles Globally</span>
+                <span class="metric-sublabel">with telematics capability</span>
+            </div>
+            <div class="metric-card">
+                <span class="metric-number">£1.2B</span>
+                <span class="metric-label">Annual TAM</span>
+                <span class="metric-sublabel">at £2/vehicle/month</span>
+            </div>
+            <div class="metric-card">
+                <span class="metric-number">18.5%</span>
+                <span class="metric-label">Insurance Telematics CAGR</span>
+                <span class="metric-sublabel">Fastest growing segment</span>
+            </div>
+        </div>
+
+        <h2>Serviceable Addressable Market (SAM)</h2>
+        <p><strong>Focus:</strong> UK, EU, North America commercial fleets with existing telematics (5+ vehicles)</p>
+        <ul>
+            <li><strong>UK/EU:</strong> ~8M commercial vehicles with telematics penetration ~40% = 3.2M addressable</li>
+            <li><strong>North America:</strong> ~15M commercial vehicles, penetration ~35% = 5.25M addressable</li>
+            <li><strong>Total SAM:</strong> 8.45M vehicles × £2/month × 12 = <strong>£203M annual SAM</strong></li>
+        </ul>
+
+        <h2>Revenue Projections (Conservative)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Connected Vehicles</th>
+                    <th>ARR (£M)</th>
+                    <th>Growth Strategy</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Year 1</td>
+                    <td>15,000</td>
+                    <td>£0.36M</td>
+                    <td>1-2 telematics partnerships, pilot programs</td>
+                </tr>
+                <tr>
+                    <td>Year 2</td>
+                    <td>60,000</td>
+                    <td>£1.44M</td>
+                    <td>3-4 partnerships, 1 insurance deal</td>
+                </tr>
+                <tr>
+                    <td>Year 3</td>
+                    <td>200,000</td>
+                    <td>£4.8M</td>
+                    <td>6-8 partnerships, 2 enterprise contracts</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="footer">DriveWise AI | Investor Presentation</div>
+    </div>
+
+    <!-- Use of Funds -->
+    <div class="page">
+        <h1>Investment & Use of Funds</h1>
+
+        <div class="market-stat">
+            <h2>£500K Seed Round</h2>
+            <p>18-Month Runway to Achieve Product-Market Fit</p>
+        </div>
+
+        <h
