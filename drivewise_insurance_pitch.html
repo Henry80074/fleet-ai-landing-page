@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveWise AI - Insurance Partner Pitch</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #0ea5e9;
+            --accent-color: #f59e0b;
+            --dark-bg: #0f172a;
+            --light-bg: #f8fafc;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #dc2626;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: white;
+        }
+        
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 0 auto;
+            background: white;
+            page-break-after: always;
+            position: relative;
+            overflow: visible;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .cover {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: var(--gradient);
+            color: white;
+        }
+        
+        .logo {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .logo .ai {
+            color: var(--accent-color);
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            max-width: 600px;
+        }
+        
+        .cover-subtitle {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-top: 40px;
+            padding: 15px 30px;
+            border: 2px solid white;
+            border-radius: 10px;
+        }
+
+        .stat-boxes {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin-top: 40px;
+            width: 100%;
+            max-width: 700px;
+        }
+
+        .stat-box {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            margin-top: 0;
+        }
+        
+        h2 {
+            color: var(--text-dark);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 18px;
+            margin-bottom: 12px;
+        }
+        
+        h3 {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+
+        h4 {
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        p {
+            margin-bottom: 10px;
+            color: var(--text-dark);
+            text-align: justify;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+        
+        li {
+            margin-bottom: 6px;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+        
+        .highlight-box {
+            background: var(--light-bg);
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            font-size: 0.9rem;
+        }
+
+        .success-box {
+            background: #ecfdf5;
+            border-left: 4px solid var(--success);
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 10px;
+            font-size: 0.9rem;
+        }
+
+        .warning-box {
+            background: #fffbeb;
+            border-left: 4px solid var(--warning);
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 10px;
+            font-size: 0.9rem;
+        }
+
+        .danger-box {
+            background: #fef2f2;
+            border-left: 4px solid var(--danger);
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 10px;
+            font-size: 0.9rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            font-size: 12px;
+            box-shadow: var(--shadow);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        th {
+            background: var(--gradient);
+            color: white;
+            padding: 10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+        }
+        
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 11px;
+        }
+        
+        tr:nth-child(even) {
+            background: var(--light-bg);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .footer {
+            position: absolute;
+            bottom: 20mm;
+            left: 25mm;
+            right: 25mm;
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-light);
+            padding-top: 10px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .big-number {
+            background: var(--gradient);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 20px 0;
+            box-shadow: 0 20px 60px rgba(37, 99, 235, 0.3);
+        }
+
+        .big-number h2 {
+            color: white;
+            margin: 0 0 10px 0;
+            font-size: 3.5rem;
+        }
+
+        .big-number p {
+            margin: 0;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .advantage-list {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .advantage-list li {
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .advantage-list li:before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 15px 0;
+        }
+
+        .metric-card {
+            background: var(--light-bg);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            font-size: 0.9rem;
+        }
+
+        .metric-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: block;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+
+        .metric-sublabel {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        .comparison-table {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .comparison-card {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .comparison-card.bad {
+            background: #fef2f2;
+            border-left: 4px solid var(--danger);
+        }
+
+        .comparison-card.good {
+            background: #ecfdf5;
+            border-left: 4px solid var(--success);
+        }
+
+        .pricing-box {
+            background: var(--gradient);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 20px 0;
+            box-shadow: 0 20px 60px rgba(37, 99, 235, 0.3);
+        }
+
+        .pricing-box h2 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 20px 0;
+            color: var(--accent-color);
+        }
+
+        .price-detail {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .page {
+                margin: 0;
+                page-break-after: always;
+            }
+            .button-container {
+                display: none;
+            }
+        }
+        
+        .button-container {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: var(--light-bg);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .download-btn {
+            background: var(--gradient);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+            transition: all 0.3s;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.4);
+        }
+
+        .icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .case-study {
+            background: var(--light-bg);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid var(--success);
+        }
+
+        .roi-calc {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .roi-label {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        .roi-value {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--success);
+        }
+    </style>
+</head>
+<body>
+    <!-- Cover Page -->
+    <div class="page cover">
+        <div class="icon">🛡️</div>
+        <div class="logo">DriveWise<span class="ai">AI</span></div>
+        <div class="tagline">The Contextual Risk Intelligence Layer for Commercial Auto Insurance</div>
+        <div class="stat-boxes">
+            <div class="stat-box">
+                <span class="stat-value">10-15%</span>
+                <span class="stat-label">Premium Reduction</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-value">30-40%</span>
+                <span class="stat-label">Better Claims Prediction</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-value">85%</span>
+                <span class="stat-label">Confidence Intervals</span>
+            </div>
+        </div>
+        <div class="cover-subtitle">Insurance Partner Proposal | November 2025</div>
+    </div>
+
+    <!-- The Problem You Face -->
+    <div class="page">
+        <h1>The Underwriting Challenge You're Facing</h1>
+        
+        <div class="danger-box">
+            <h3 style="color: var(--danger); margin-top: 0;">Commercial Auto Insurance Is Broken</h3>
+            <ul style="margin-top: 15px;">
+                <li><strong>Loss Ratios Over 100%:</strong> Most carriers have struggled with profitability in commercial auto for years</li>
+                <li><strong>Premium Increases Not Working:</strong> Rates up 10.4% in Q1 2025, but claims still outpacing premiums</li>
+                <li><strong>Adverse Selection:</strong> Good fleets leave for competitors while risky ones stay</li>
+                <li><strong>Telematics Promise Unfulfilled:</strong> Fleets have telematics data but you can't use it effectively</li>
+            </ul>
+        </div>
+
+        <h2>Your Current Situation</h2>
+        
+        <div class="comparison-table">
+            <div class="comparison-card bad">
+                <h4>❌ What You Have Today</h4>
+                <ul style="font-size: 0.9rem; margin-top: 10px;">
+                    <li>Raw telematics data (hard braking, acceleration, speeding counts)</li>
+                    <li>No context about WHY events occurred</li>
+                    <li>Generic risk scores that don't predict claims</li>
+                    <li>Can't differentiate safe fleets from risky ones</li>
+                    <li>No actuarial basis to justify premium discounts</li>
+                    <li>Competitive pressure to offer UBI without the tools</li>
+                </ul>
+            </div>
+
+            <div class="comparison-card good">
+                <h4>✓ What You Actually Need</h4>
+                <ul style="font-size: 0.9rem; margin-top: 10px;">
+                    <li>Contextual understanding of driving risk</li>
+                    <li>Predictive models that forecast claims</li>
+                    <li>Actuarially-sound data to justify pricing</li>
+                    <li>Ability to identify truly safe vs. risky fleets</li>
+                    <li>Competitive UBI product differentiation</li>
+                    <li>Reduced loss ratios through better selection</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>The Critical Gap</h2>
+        <p>Research proves that combining telematics with contextual data (weather, road type, traffic, time of day) dramatically improves claims prediction. But existing telematics providers don't deliver this. You're left with data-rich but insight-poor information that can't support underwriting decisions.</p>
+
+        <div class="highlight-box">
+            <strong style="color: var(--primary-color); font-size: 1.1rem;">The Result:</strong>
+            <p style="margin-top: 10px;">You're stuck offering the same generic rates to all fleets with telematics, unable to reward truly safe operations or charge appropriate premiums for risky ones. This creates premium leakage at both ends.</p>
+        </div>
+
+        <div class="footer">DriveWise AI | Insurance Partner Proposal</div>
+    </div>
+
+    <!-- Our Solution -->
+    <div class="page">
+        <h1>How DriveWise AI Solves Your Problem</h1>
+        
+        <p style="font-size: 1.1rem; margin-bottom: 25px;">We transform raw telematics data into insurance-grade risk intelligence that directly supports underwriting and pricing decisions.</p>
+
+        <h2>The DriveWise AI Difference</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>What You Get</th>
+                    <th>How It Works</th>
+                    <th>Underwriting Impact</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Contextual Event Analysis</strong></td>
+                    <td>Every driving event enriched with weather, road type, traffic density, lighting, crash history</td>
+                    <td>Understand <em>why</em> events occurred - distinguish defensive from risky driving</td>
+                </tr>
+                <tr>
+                    <td><strong>Multiplicative Risk Scoring</strong></td>
+                    <td>ML models that understand rain + night + speed = 5x risk, not just 3 events</td>
+                    <td>Accurate risk quantification that correlates with claims</td>
+                </tr>
+                <tr>
+                    <td><strong>Predictive Claims Forecasting</strong></td>
+                    <td>30/60/90-day incident probability for each driver and fleet with confidence intervals</td>
+                    <td>Actuarially-sound risk forecasts for pricing and renewal decisions</td>
+                </tr>
+                <tr>
+                    <td><strong>Driver Behavioral DNA</strong></td>
+                    <td>12+ dimensional profiling: urban/highway, day/night, weather adaptation, traffic handling</td>
+                    <td>Identify high-risk driver archetypes before claims occur</td>
+                </tr>
+                <tr>
+                    <td><strong>Risk Intervention Alerts</strong></td>
+                    <td>Real-time alerts when drivers enter high-risk patterns</td>
+                    <td>Proactive loss control - prevent claims before they happen</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Why This Matters for Your Bottom Line</h2>
+
+        <div class="success-box">
+            <h3 style="color: var(--success); margin-top: 0;">Better Risk Selection = Better Loss Ratios</h3>
+            <ul style="margin-top: 15px;">
+                <li><strong>Reduce Adverse Selection:</strong> Identify and retain truly safe fleets with 10-15% premium discounts backed by data</li>
+                <li><strong>Charge Appropriate Premiums:</strong> Identify risky fleets masquerading as safe and price them correctly</li>
+                <li><strong>Predict Claims Accurately:</strong> 30-40% better claims prediction vs. raw telematics alone</li>
+                <li><strong>Reduce Loss Costs:</strong> Predictive interventions prevent 15-25% of incidents</li>
+                <li><strong>Competitive Advantage:</strong> Offer UBI products competitors can't match</li>
+            </ul>
+        </div>
+
+        <div class="footer">DriveWise AI | Insurance Partner Proposal</div>
+    </div>
+
+    <!-- The Business Case -->
+    <div class="page">
+        <h1>The Financial Case: ROI for Insurers</h1>
+
+        <h2>Scenario: 10,000 Vehicle Fleet Portfolio</h2>
+        <p>Let's model the financial impact on a typical commercial auto book with 10,000 insured vehicles using DriveWise AI.</p>
+
+        <h3>UK Commercial Fleet Insurance Economics</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0;">
+            <div style="background: var(--light-bg); padding: 20px; border-radius: 10px; text-align: center;">
+                <div style="font-size: 2.5rem; font-weight: 800; color: var(--primary-color); margin-bottom: 10px;">70.1%</div>
+                <div style="font-size: 0.95rem; color: var(--text-dark); font-weight: 600;">Fleet Loss Ratio</div>
+                <div style="font-size: 0.85rem; color: var(--text-light);">(2023/24)</div>
+            </div>
+            <div style="background: var(--light-bg); padding: 20px; border-radius: 10px; text-align: center;">
+                <div style="font-size: 2.5rem; font-weight: 800; color: #dc2626; margin-bottom: 10px;">105.9%</div>
+                <div style="font-size: 0.95rem; color: var(--text-dark); font-weight: 600;">Market Combined Ratio</div>
+                <div style="font-size: 0.85rem; color: var(--text-light);">(2024/25 est.)</div>
+            </div>
+            <div style="background: var(--light-bg); padding: 20px; border-radius: 10px; text-align: center;">
+                <div style="font-size: 2.5rem; font-weight: 800; color: var(--success); margin-bottom: 10px;">£800</div>
+                <div style="font-size: 0.95rem; color: var(--text-dark); font-weight: 600;">Avg. Premium</div>
+                <div style="font-size: 0.85rem; color: var(--text-light);">per Vehicle/year</div>
+            </div>
+        </div>
+        <div style="background: #f0f9ff; border-left: 4px solid var(--primary-color); padding: 15px; margin: 20px 0; border-radius: 8px; font-size: 0.95rem;">
+            <p><strong>What this means:</strong> Loss ratio (70.1%) shows claims are 70% of premiums, but combined ratio (105.9%) includes operating expenses, meaning the market loses money overall. This drives premium increases and urgent demand for better risk intelligence like DriveWise AI.</p>
+        </div>
+
+        <div class="case-study">
+            <h4>Portfolio Assumptions</h4>
+            <div class="roi-calc">
+                <span class="roi-label">Total Insured Vehicles</span>
+                <span class="roi-value">10,000</span>
+            </div>
+            <div class="roi-calc">
+                <span class="roi-label">Average Premium per Vehicle</span>
+                <span class="roi-value">£800/year</span>
+            </div>
+            <div class="roi-calc">
+                <span class="roi-label">Total Annual Premium</span>
+                <span class="roi-value">£8M</span>
+            </div>
+            <div class="roi-calc">
+                <span class="roi-label">Current Loss Ratio (Fleet Industry Standard)</span>
+                <span class="roi-value" style="color: var(--danger);">70.1%</span>
+            </div>
+        </div>
+
+        <h3>Benefit #1: Improved Risk Selection</h3>
+        <div class="success-box">
+            <p><strong>Before DriveWise:</strong> You offer a flat 5% telematics discount to all fleets with basic monitoring.</p>
+            <p style="margin-top: 10px;"><strong>With DriveWise:</strong> You identify the truly safe 30% of fleets and offer them 12% discounts, while removing discounts from the riskiest 20%.</p>
+            
+            <div class="roi-calc" style="margin-top: 15px;">
+                <span class="roi-label">Premium Leakage Recovered (risky fleets charged appropriately)</span>
+                <span class="roi-value">+£160K/year</span>
+            </div>
+            <div class="roi-calc">
+                <span class="roi-label">Safe Fleet Retention (prevent defection to competitors)</span>
+                <span class="roi-value">+£240K/year</span>
+            </div>
+        </div>
+
+        <h3>Benefit #2: Reduced Claims Through Intervention</h3>
+        <div class="success-box">
+            <p>DriveWise AI's predictive alerts enable proactive loss control. Telematics with behavioral coaching reduces incidents by 10-25%. We model a conservative 10%.</p>
+            
+            <div class="roi-calc" style="margin-top: 15px;">
+                <span class="roi-label">Baseline Claims Cost (70.1% loss ratio)</span>
+                <span class="roi-value" style="color: var(--danger);">£5.61M</span>
+            </div>
+            <div class="roi-calc">
+                <span class="roi-label">Claims Reduction (conservative 10%)</span>
+                <span class="roi-value">-£0.56M</span>
+            </div>
+            <div class="roi-calc">
+                <span class="roi-label">New Claims Cost</span>
+                <span class="roi-value">£5.05M</span>
+            </div>
+            <div class="roi-calc">
+                <span class="roi-label"><strong>New Loss Ratio</strong></span>
+                <span class="roi-value" style="font-size: 1.5rem;">63.1%</span>
+            </div>
+        </div>
+
+        <h3>Total Financial Impact</h3>
+        <div class="big-number">
+            <h2>£0.80M</h2>
+            <p>Annual Benefit vs. £240K Cost (10K vehicles × £2/month)</p>
+            <p style="margin-top: 15px; font-size: 1.4rem;"><strong>ROI: 333%</strong></p>
+            <p style="margin-top: 10px; font-size: 0.9rem; color: var(--text-light);">Based on realistic 70.1% fleet loss ratio + 10% claims reduction</p>
+        </div>
+
+        <div class="footer">DriveWise AI | Insurance Partner Proposal</div>
+    </div>
+
+    <!-- Competitive Intelligence -->
+    <div class="page">
+        <h1>What Insurers Are Already Doing</h1>
+
+        <h2>The Market Is Moving Fast</h2>
+        <p>Commercial auto insurers are rapidly adopting telematics-based underwriting. Those who move first gain competitive advantage and better loss ratios.</p>
+
+        <!-- <h3>Insurtech Disruptors Leading the Way</h3>
+        <ul>
+            <li><strong>HDVI, Cover Whale, Nirvana:</strong> New entrants requiring 90 days of telematics data before quoting - but they lack contextual intelligence</li>
+            <li><strong>TruckerCloud, SambaSafety:</strong> Building data aggregation infrastructure connecting fleets to insurers</li>
+            <li><strong>Traditional Carriers:</strong> Offering basic telematics discounts (5-10%) but struggling to justify them actuarially</li>
+        </ul> -->
+
+        <h3>The Problem with Current Approaches</h3>
+        <div class="warning-box">
+            <ul>
+                <li><strong>Generic Scoring:</strong> Most insurers use simple event counts (harsh braking, speeding) without context</li>
+                <li><strong>No Prediction:</strong> Backward-looking data doesn't forecast future claims</li>
+                <li><strong>Adverse Selection Risk:</strong> Flat telematics discounts attract both safe and risky fleets</li>
+                <li><strong>Competitive Vulnerability:</strong> Whoever gets contextual intelligence first wins the safe fleets</li>
+            </ul>
+        </div>
+
+        <h2>DriveWise AI: Your Competitive Advantage</h2>
+        <div class="success-box">
+            <h4 style="margin-top: 0;">Be the First to Offer True Usage-Based Insurance</h4>
+            <ul style="margin-top: 10px;">
+                <li><strong>Differentiated Product:</strong> "Our UBI uses AI-powered contextual risk analysis" - competitors can't match this</li>
+                <li><strong>Win the Best Fleets:</strong> Offer data-justified 15% discounts to truly safe operators</li>
+                <li><strong>Avoid the Worst Fleets:</strong> Identify risky operations early and price appropriately</li>
+                <li><strong>Lower Loss Ratios:</strong> Better selection + predictive interventions = sustained profitability</li>
+                <li><strong>First-Mover Advantage:</strong> Build market share before competitors catch up</li>
+            </ul>
+        </div>
+
+        <h2>The Strategic Risk of Waiting</h2>
+        <p>If a competitor implements DriveWise AI first, they will:</p>
+        <ul>
+            <li>Attract and retain the safest, most profitable fleets with justified discounts</li>
+            <li>Leave you with adverse selection - the riskiest fleets no one else will write</li>
+            <li>Force you into a reactive position, raising rates to compensate for poor selection</li>
+            <li>Build a reputation as the "smart insurer" while you're seen as behind the times</li>
+        </ul>
+
+        <div class="footer">DriveWise AI | Insurance Partner Proposal</div>
+    </div>
+
+    <!-- Implementation & Pricing -->
+    <div class="page">
+        <h1>Partnership Models & Pricing</h1>
+
+        <h2>How We Work Together</h2>
+        <p>DriveWise AI integrates seamlessly into your existing workflow. We don't replace your systems - we enhance them with predictive intelligence.</p>
+
+        <h3>Risk Data Subscription</h3>
+        <div class="highlight-box">
+            <h4>How It Works</h4>
+            <ul>
+                <li>You send us telematics data from your policyholders (via telematics provider APIs or direct integration)</li>
+                <li>We enrich it with contextual data and run our predictive models</li>
+                <li>We deliver risk scores, incident forecasts, and behavioral DNA profiles back to your underwriting systems</li>
+                <li>You use this intelligence for pricing, renewal decisions, and loss control</li>
+            </ul>
+
+            <div class="pricing-box" style="margin-top: 20px;">
+                <h2 style="font-size: 2rem;">£2 per vehicle, per month</h2>
+                <p>Billed annually | Volume discounts available</p>
+            </div>
+
+            <p style="text-align: center;"><strong>For a 10,000 vehicle portfolio: £240K/year</strong></p>
+        </div>
+    </div>
