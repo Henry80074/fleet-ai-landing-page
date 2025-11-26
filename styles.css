@@ -385,6 +385,113 @@ body {
     color: var(--text-dark);
 }
 
+/* Risk Map Highlight */
+.risk-map-highlight {
+    padding: 100px 0;
+    background: var(--white);
+}
+
+.highlight-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.map-preview-card {
+    background: var(--light-bg);
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    border: 2px dashed var(--primary-color);
+    transition: transform 0.3s;
+}
+
+.map-preview-card:hover {
+    transform: scale(1.02);
+}
+
+.map-preview-icon {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .mobile-menu-btn {
+        display: flex;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        flex-direction: column;
+        padding: 2rem;
+        box-shadow: var(--shadow);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        gap: 1.5rem;
+    }
+    
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-links a {
+        display: block;
+        padding: 1rem;
+        border-radius: 8px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    
+    .nav-links a:hover {
+        background-color: var(--light-bg);
+    }
+    
+    .cta-button {
+        margin-top: 1rem;
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .features-grid,
+    .benefits-grid,
+    .use-cases-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-form {
+        padding: 0 1rem;
+    }
+    
+    .highlight-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* CTA Section */
 .cta-section {
     padding: 100px 0;
@@ -457,77 +564,4 @@ body {
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: rgba(255, 255, 255, 0.5);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .hero-stats {
-        flex-direction: column;
-        gap: 2rem;
-    }
-    
-    .mobile-menu-btn {
-        display: flex;
-    }
-    
-    .nav-links {
-        position: fixed;
-        top: 80px;
-        left: 0;
-        right: 0;
-        background: var(--white);
-        flex-direction: column;
-        padding: 2rem;
-        box-shadow: var(--shadow);
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        gap: 1.5rem;
-    }
-    
-    .nav-links.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-    }
-    
-    .nav-links li {
-        width: 100%;
-        text-align: center;
-    }
-    
-    .nav-links a {
-        display: block;
-        padding: 1rem;
-        border-radius: 8px;
-        transition: background-color 0.3s, color 0.3s;
-    }
-    
-    .nav-links a:hover {
-        background-color: var(--light-bg);
-    }
-    
-    .cta-button {
-        margin-top: 1rem;
-    }
-    
-    .hero-cta {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .features-grid,
-    .benefits-grid,
-    .use-cases-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .contact-form {
-        padding: 0 1rem;
-    }
 }

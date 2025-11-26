@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveWise AI - Interactive Road Risk Map</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">DriveWise<span class="ai">AI</span></div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#technology">Technology</a></li>
+                <li><a href="risk_map.html" class="active">Risk Map</a></li>
+                <li><a href="driver-report.html">Sample Report</a></li>
+                <li><a href="drivewise_partnership_pitch.html">Partners</a></li>
+                <li><a href="drivewise_insurance_pitch.html">Insurers</a></li>
+                <li><a href="drivewise_investor_pitch.html">Investors</a></li>
+                <li><a href="index.html#contact" class="cta-button">Request Demo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Road Risk Map Section -->
+    <section id="risk-map" class="risk-map-section" style="padding: 120px 0 80px; background-color: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Interactive Road Risk Map</h2>
+            <p class="section-subtitle">Explore our Relative & Composite Risk Engine. See how environmental factors amplify baseline road risk.</p>
+            
+            <div class="risk-map-container" style="background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                <div class="risk-engine-info" style="margin-bottom: 20px;">
+                    <div class="info-block" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                        <h3 style="color: #2c3e50; margin-bottom: 15px;">How Our Risk Engine Works</h3>
+                        <p style="color: #666; line-height: 1.6; font-size: 1.1em;">
+                            Our road risk engine combines historical crash data with environmental factors. 
+                            By toggling the layers below, you can see how a "Safe" road in daylight can transform into a "High Risk" corridor in rain or darkness. 
+                            We predict risk not just based on where accidents <em>have</em> happened, but where they are <em>likely</em> to happen right now.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="map-wrapper" style="position: relative; height: 600px; width: 100%; border-radius: 8px; overflow: hidden; border: 1px solid #eee;">
+                    <iframe src="risk_map_interactive.html" style="width: 100%; height: 100%; border: none;" title="Interactive Risk Map"></iframe>
+                </div>
+                
+                <div class="map-legend-note" style="margin-top: 15px; font-size: 0.9em; color: #888; text-align: center;">
+                    <em>Interactive Demo: Use the layer control (top right) to switch between 'Baseline', 'Rain + Daylight', and 'Rain + Darkness' scenarios.</em>
+                </div>
+
+                <div class="methodology-section" style="margin-top: 40px; padding-top: 30px; border-top: 1px solid #eee;">
+                    <h3 style="text-align: center; margin-bottom: 30px; color: #2c3e50;">The Science Behind the Score</h3>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                        <div class="method-block">
+                            <h4 style="color: #2c3e50; margin-bottom: 15px; display: flex; align-items: center;">
+                                <span style="background: #e8f4f8; color: #3498db; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 10px; font-size: 0.9em;">1</span>
+                                Baseline Risk: Frequency × Severity
+                            </h4>
+                            <p style="color: #666; font-size: 0.95em; line-height: 1.6;">
+                                We calculate a weighted <strong>Severity Score</strong> for every road segment, giving more weight to fatal accidents than minor ones. 
+                                Using <strong>advanced statistical modeling</strong>, we combine this historical data with traffic volume to identify <em>true</em> high-risk hotspots — smoothing out "freak accidents" while highlighting persistent dangers on specific road segments.
+                            </p>
+                        </div>
+                        
+                        <div class="method-block">
+                            <h4 style="color: #2c3e50; margin-bottom: 15px; display: flex; align-items: center;">
+                                <span style="background: #e8f4f8; color: #3498db; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 10px; font-size: 0.9em;">2</span>
+                                Dynamic Context Multipliers
+                            </h4>
+                            <p style="color: #666; font-size: 0.95em; line-height: 1.6;">
+                                Not all roads react to weather the same way. A straight highway might only become <strong>1.2x</strong> riskier in rain, 
+                                while a winding rural lane could become <strong>3.5x</strong> riskier.
+                                Our engine learns and applies risk multipliers based on <strong>Weather</strong> and <strong>Light</strong> conditions, giving you a risk score that adapts to the changing environment.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>DriveWise<span class="ai">AI</span></h4>
+                    <p>Intelligent fleet safety and risk management powered by AI.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Technology</h4>
+                    <ul>
+                        <li>Driver Behavior DNA</li>
+                        <li>Contextual Risk Intelligence</li>
+                        <li>Predictive Analytics</li>
+                        <li>Personalized Coaching</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li>About Us</li>
+                        <li>Privacy Policy</li>
+                        <li>Terms of Service</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>hello@fleetriskai.com</li>
+                        <li>+44 (0) 20 1234 5678</li>
+                        <li>London, UK</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DriveWise AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>
