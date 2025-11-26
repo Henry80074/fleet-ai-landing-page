@@ -393,27 +393,66 @@ body {
 
 .highlight-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 450px;
     gap: 4rem;
     align-items: center;
 }
 
 .map-preview-card {
-    background: var(--light-bg);
-    padding: 3rem;
+    background: var(--white);
+    padding: 0;
     border-radius: 20px;
-    text-align: center;
-    border: 2px dashed var(--primary-color);
+    overflow: hidden;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eee;
+    box-shadow: var(--shadow);
     transition: transform 0.3s;
+    position: relative;
 }
 
 .map-preview-card:hover {
-    transform: scale(1.02);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
 }
 
-.map-preview-icon {
-    font-size: 5rem;
-    margin-bottom: 1rem;
+.map-preview-card img {
+    width: 100%;
+    flex: 1;
+    object-fit: cover;
+    min-height: 0;
+}
+
+.map-preview-info {
+    background: rgba(255,255,255,0.95);
+    padding: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.map-preview-info h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.map-preview-info p {
+    margin: 0;
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+@media (max-width: 968px) {
+    .highlight-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .map-preview-card {
+        max-width: 600px;
+        margin: 0 auto;
+        height: 350px;
+    }
 }
 
 @media (max-width: 768px) {
